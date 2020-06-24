@@ -1,7 +1,8 @@
 <script>
 
 import {onMount} from 'svelte'
-
+import Button from './Button.svelte'
+import { flip } from 'svelte/animate';
 
  const endPoint = "https://api.foursquare.com/v2/venues/explore?";
  const parameters = {
@@ -14,9 +15,7 @@ import {onMount} from 'svelte'
         }
  
 let venues = []
-       
    
-    
          
      onMount(async function() {
          const response = await fetch(endPoint + new URLSearchParams(parameters));
@@ -26,22 +25,34 @@ let venues = []
  });
             
 
+    //   const URL =  "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CnRtAAAATLZNl354RwP_9UKbQ_5Psy40texXePv4oAlgP4qNEkdIrkyse7rPXYGd9D_Uj1rVsQdWT4oRz4QrYAJNpFX7rzqqMlZw2h2E2y5IKMUZ7ouD_SlcHxYq1yL4KbKUv3qtWgTK0A6QbGh87GB3sscrHRIQiG2RrmU_jF4tENr9wGS_YxoUSSDrYjWmrNfeEHSGSc3FyhNLlBU&key=AIzaSyDjD-QmoPcvOaMKv4qUcSkmANZSzq82bWs"
+    //   let data = [];
+    //     onMount(async function() {
+    //     const response = await fetch(URL);
+    //     data = await response.json();
+    //    data= data.data;
+    //     console.log(data)
+    // });
+
 </script>
             
 	
 
 {#each venues as venue}
-<div class="card">
+<div class="card" >
     <img src="http://placeimg.com/250/250/nature" alt="" id="brewery-image">
     <div id="text-container">
-        <h1 class="title">{venue.venue.name}</h1>
-        <p class="location">{venue.venue.location.formattedAddress[0]}<br>
+        <h2 class="title">{venue.venue.name}</h2>
+        <p class="location"><i class="fas fa-map-marker"></i>
+                            <!-- {venue.venue.location.formattedAddress[0]}<br> -->
                             {venue.venue.location.formattedAddress[1]}<br></p>
         <p class="hours">{venue.venue.hours}</p>
         <p class="food">{venue.venue.food}</p>
     </div>
-    <button>more</button>
+  <Button />
 </div>
+
+
 {/each}
    
     
@@ -72,8 +83,10 @@ let venues = []
     box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
 }
 
-h1 {
+h2 {
     margin: 0 auto;
+ 
+   
 }
 
 #brewery-image {
@@ -85,12 +98,10 @@ h1 {
 
 }
 
-button {
-    background-color: #C5B18B;
-    color: white;
-    border: none;
-    width: 90%;
-    padding: .5em
+.fa-map-marker {
+    color:#F93E01;
+    padding-right:8px;
 }
+
 
 </style>
