@@ -3,7 +3,7 @@
 	import Navbar from './Navbar.svelte'
 	import Card from "./Card.svelte"
 	import Footer from "./Footer.svelte"
-	import MaterialUiCard from './MaterialUlCard.svelte'
+	
 	
 </script>
 

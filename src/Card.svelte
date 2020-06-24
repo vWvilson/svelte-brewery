@@ -25,18 +25,11 @@ let venues = []
  });
             
 
-    //   const URL =  "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CnRtAAAATLZNl354RwP_9UKbQ_5Psy40texXePv4oAlgP4qNEkdIrkyse7rPXYGd9D_Uj1rVsQdWT4oRz4QrYAJNpFX7rzqqMlZw2h2E2y5IKMUZ7ouD_SlcHxYq1yL4KbKUv3qtWgTK0A6QbGh87GB3sscrHRIQiG2RrmU_jF4tENr9wGS_YxoUSSDrYjWmrNfeEHSGSc3FyhNLlBU&key=AIzaSyDjD-QmoPcvOaMKv4qUcSkmANZSzq82bWs"
-    //   let data = [];
-    //     onMount(async function() {
-    //     const response = await fetch(URL);
-    //     data = await response.json();
-    //    data= data.data;
-    //     console.log(data)
-    // });
+  let yes="false"
 
 </script>
             
-	
+
 
 {#each venues as venue}
 <div class="card" >
@@ -48,6 +41,11 @@ let venues = []
                             {venue.venue.location.formattedAddress[1]}<br></p>
    
     </div>
+    <div class="checkbox"><label>
+	<input type=checkbox bind:checked={yes}>
+	visited
+</label>
+</div>
  <button>more</button>
 </div>
 
