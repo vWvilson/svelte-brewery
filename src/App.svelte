@@ -1,7 +1,10 @@
 
 <script>
-	import Navbar from './Navbar.svelte';
+	import Navbar from './Navbar.svelte'
 	import Card from "./Card.svelte"
+	import Footer from "./Footer.svelte"
+	import MaterialUiCard from './MaterialUlCard.svelte'
+	
 </script>
 
 
@@ -9,12 +12,18 @@
 
 
 <body>
-<Navbar />
-<main>
-	<Card />
+<div class="layout">
+	<Navbar />
+		<main>
+			<Card />
+		
 
-</main>
+		</main>
+			
+	<Footer />
+</div>
 </body>
+
 
 
 
@@ -26,7 +35,7 @@
 	}
 	main {
 		display:grid;
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(4, 24vw);
 		grid-row-gap: 1em;
 		background-color: #C5C6C7;
 		text-align: center;

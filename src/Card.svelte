@@ -1,7 +1,7 @@
 <script>
 
 import {onMount} from 'svelte'
-import Button from './Button.svelte'
+
 import { flip } from 'svelte/animate';
 
  const endPoint = "https://api.foursquare.com/v2/venues/explore?";
@@ -40,42 +40,39 @@ let venues = []
 
 {#each venues as venue}
 <div class="card" >
-    <img src="http://placeimg.com/250/250/nature" alt="" id="brewery-image">
+    <img src="http://placeimg.com/250/250/nature" alt="" id="brewery-image" aspectRatio="16x9">
     <div id="text-container">
         <h2 class="title">{venue.venue.name}</h2>
         <p class="location"><i class="fas fa-map-marker"></i>
                             <!-- {venue.venue.location.formattedAddress[0]}<br> -->
                             {venue.venue.location.formattedAddress[1]}<br></p>
-        <p class="hours">{venue.venue.hours}</p>
-        <p class="food">{venue.venue.food}</p>
+   
     </div>
-  <Button />
+ <button>more</button>
 </div>
 
 
 {/each}
    
     
-           
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <style>
-.card {
-    width: 20vw;
-    color: #2B344F;
+button {
+  
+    background-color: #C5B18B;
+    color: white;
+    border: none;
+    width: 90%;
+    padding: .5em
+}
 
+button:hover {
+    background-color: #af8b46;
+}
+.card {
+    width: 23vw;
+    color: #2B344F;
+    position: relative;
     border-radius: 3px;
     background-color: white;
     -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
@@ -85,8 +82,12 @@ let venues = []
 
 h2 {
     margin: 0 auto;
- 
+    font-size: clamp(1em, 1.2vw, 2em);
    
+}
+
+p {
+    font-size:1em
 }
 
 #brewery-image {
@@ -105,3 +106,19 @@ h2 {
 
 
 </style>
+           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
