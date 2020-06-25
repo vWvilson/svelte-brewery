@@ -1,7 +1,7 @@
 <script>
 
 import {onMount} from 'svelte'
-
+import { fade } from 'svelte/transition';
 
 
  const endPoint = "https://api.foursquare.com/v2/venues/explore?";
@@ -36,10 +36,10 @@ let yes="false"
 </script>
             
 
-
+{#if yes}
 {#each venues as venue (venue.venue.id)}
-<div class="card">
-    <img src="http://placeimg.com/250/250/nature" alt="" id="brewery-image" aspectRatio="16x9">
+<div transition:fade class="card">
+    <img src="http://placeimg.com/250/250/nature" alt="" id="brewery-image" >
     <div id="text-container">
         <h2 class="title">{venue.venue.name}</h2>
         <p class="location"><i class="fas fa-map-marker"></i>
@@ -55,6 +55,7 @@ let yes="false"
     <button>more</button>
 </div>
 {/each}
+{/if}
    
    
 
@@ -63,6 +64,9 @@ let yes="false"
     
 
 <style>
+img {
+    width:80%;
+}
 button {
   
     background-color: #C5B18B;
@@ -109,6 +113,7 @@ p {
     color:#F93E01;
     padding-right:8px;
 }
+
 
 
 </style>
