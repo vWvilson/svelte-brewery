@@ -2,35 +2,50 @@
 	import Navbar from './Navbar.svelte'
 	import Card from "./Card.svelte"
 	import Footer from "./Footer.svelte"
+		import Map from './Map.svelte';
+	import MapMarker from './MapMarker.svelte';
+</script>
 
 
 	
-</script>
 
 
 
 
 
 <body>
-	<div class="layout">
-		<Navbar />
-		<main>
-			<Card>
-			
-			</Card>
-		</main>
 
-		<Footer />
-	</div>
+		<Navbar />
+			<main>
+				<Card />
+			</main>
+				<section class="map-container">
+				<Map lat={40.44} lon={-79.99} zoom={10.5} />
+				</section>
+			
+				<Footer />
+		
+
 </body>
+
+
+	
+
+			
+		
+
 
 
 
 
 <style>
 	body {
+		height:100vh;
 		margin: 0 auto;
 		padding: 0;
+	}
+	.layout {
+		width: fit-content;
 	}
 
 	main {
@@ -44,12 +59,12 @@
 		margin: 0 auto;
 	}
 
-
-
-
 	@media (min-width: 640px) {
 		main {
 			max-width: none;
 		}
 	}
 </style>
+
+
+

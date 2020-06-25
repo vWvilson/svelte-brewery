@@ -1,14 +1,31 @@
+
+
+ 
+ 
  <div id="contain">
- <div id="left">
-<h1>BREWFINDER</h1>
-</div>
+  <div id="left">
+    <h1>BREWFINDER</h1>
+  </div>
+
+
 <div id="right">
-<div>
-<i class="fas fa-beer"></i><i class="fab fa-twitter"></i><i class="fab fa-instagram-square"></i>
+
+    <div>
+      <i class="fas fa-beer"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-instagram-square"></i>
+      <i class="fas fa-map"></i>
+    </div>
+
 </div>
 
 
-</div>
+
+
+
+
+
+
  </div>
 
  <style>
@@ -32,7 +49,7 @@
   }
 
   .fas,
-  .fab {
+  .fab{
     color: #C5B18B;
     line-height: 4.5em;
     font-size: 36px;
@@ -45,12 +62,12 @@
     grid-template-columns: 30vw 70vw;
     grid-template-areas:
       "left right";
-
-
     background-color: #2B344F;
     padding: 1rem 0;
 
   }
+
+
 
 
 
