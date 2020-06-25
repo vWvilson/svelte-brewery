@@ -2,7 +2,7 @@
 
 import {onMount} from 'svelte'
 
-import { flip } from 'svelte/animate';
+
 
  const endPoint = "https://api.foursquare.com/v2/venues/explore?";
  const parameters = {
@@ -21,36 +21,44 @@ let venues = []
          const response = await fetch(endPoint + new URLSearchParams(parameters));
          venues = await response.json();
          venues= venues.response.groups[0].items;
-         console.log(venues)
+         
  });
             
-
-  let yes="false"
-
+let yes="false"
+ 
+ const handleCheck = (id) => {
+      venues = venues.filter((venue)=> venue.venue.id != id )
+      console.log(venues)
+      console.log(id)
+   
+ }
+    
 </script>
             
 
 
-{#each venues as venue}
-<div class="card" >
+{#each venues as venue (venue.venue.id)}
+<div class="card">
     <img src="http://placeimg.com/250/250/nature" alt="" id="brewery-image" aspectRatio="16x9">
     <div id="text-container">
         <h2 class="title">{venue.venue.name}</h2>
         <p class="location"><i class="fas fa-map-marker"></i>
-                            <!-- {venue.venue.location.formattedAddress[0]}<br> -->
-                            {venue.venue.location.formattedAddress[1]}<br></p>
-   
+      
+
+            {venue.venue.location.formattedAddress[1]}<br></p>
+       	<div class="checkbox"><label>
+						<input type=checkbox bind:checked={venue.venue.checked} on:change={() => {handleCheck(venue.venue.id)}}>
+						visited
+					</label>
+				</div>
     </div>
-    <div class="checkbox"><label>
-	<input type=checkbox bind:checked={yes}>
-	visited
-</label>
+    <button>more</button>
 </div>
- <button>more</button>
-</div>
-
-
 {/each}
+   
+   
+
+
    
     
 

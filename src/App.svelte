@@ -1,9 +1,9 @@
-
 <script>
 	import Navbar from './Navbar.svelte'
 	import Card from "./Card.svelte"
 	import Footer from "./Footer.svelte"
-	
+
+
 	
 </script>
 
@@ -12,29 +12,29 @@
 
 
 <body>
-<div class="layout">
-	<Navbar />
+	<div class="layout">
+		<Navbar />
 		<main>
-			<Card />
-		
-
-		</main>
+			<Card>
 			
-	<Footer />
-</div>
+			</Card>
+		</main>
+
+		<Footer />
+	</div>
 </body>
 
 
 
 
 <style>
-
 	body {
-		margin:0 auto;
-		padding:0;
+		margin: 0 auto;
+		padding: 0;
 	}
+
 	main {
-		display:grid;
+		display: grid;
 		grid-template-columns: repeat(4, 24vw);
 		grid-row-gap: 1em;
 		background-color: #C5C6C7;
@@ -53,9 +53,3 @@
 		}
 	}
 </style>
-
-
-
-
-
-
