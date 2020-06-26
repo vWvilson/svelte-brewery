@@ -2,7 +2,7 @@
 	import Navbar from './Navbar.svelte'
 	import Card from "./Card.svelte"
 	import Footer from "./Footer.svelte"
-		import Map from './Map.svelte';
+	import Map from './Map.svelte';
 	import MapMarker from './MapMarker.svelte';
 </script>
 
@@ -44,9 +44,7 @@
 		margin: 0 auto;
 		padding: 0;
 	}
-	.layout {
-		width: fit-content;
-	}
+
 
 	main {
 		display: grid;

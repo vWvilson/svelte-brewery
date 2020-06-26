@@ -36,8 +36,17 @@
 	});
 </script>
 
+
+<div class="container-map">
+<div bind:this={container}>
+	{#if map}
+		<slot></slot>
+	{/if}
+</div>
+</div>
+
 <style>
-.container {
+.container-map{
     text-align: center;
 }
 	div {
@@ -48,10 +57,3 @@
         margin:0 auto;
 	}
 </style>
-<div class="container">
-<div bind:this={container}>
-	{#if map}
-		<slot></slot>
-	{/if}
-</div>
-</div>
