@@ -26,7 +26,7 @@ onMount(async function() {
             
 let yes="false"
  
-const handleCheck = (id) => {
+export const handleCheck = (id) => {
     venues = venues.filter((venue)=> venue.venue.id != id )
     console.log(venues)
     console.log(id)

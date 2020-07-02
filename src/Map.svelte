@@ -47,13 +47,17 @@
 
 <style>
 .container-map{
-    text-align: center;
+	
+	background-color: goldenrod;
+	text-align: center;
+	padding:.7em
 }
 	div {
-        display: inline-block;
-		width: 95vw;
+	
+		background-color: #C5C6C7;
+		width:99.1%;
         height: 50vh;
-        padding:1em;
-        margin:0 auto;
+       
+     
 	}
 </style>

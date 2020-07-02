@@ -4,10 +4,10 @@
 	import Footer from "./Footer.svelte"
 	import Map from './Map.svelte';
 	import MapMarker from './MapMarker.svelte';
+	import {onMount} from 'svelte'
+	import { fade, fly } from 'svelte/transition';
 
 
- import {onMount} from 'svelte'
-import { fade, fly } from 'svelte/transition';
 
 
 const endPoint = "https://api.foursquare.com/v2/venues/explore?";
@@ -32,12 +32,7 @@ onMount(async function() {
             
 let yes="false"
  
-const handleCheck = (id) => {
-    venues = venues.filter((venue)=> venue.venue.id != id )
-    console.log(venues)
-    console.log(id)
-   
- }
+
 	
 </script>
 
@@ -57,7 +52,8 @@ const handleCheck = (id) => {
 				<section class="map-container">
 				<Map lat={40.44} lon={-79.99} zoom={10.5}>
 				{#each venues as venue (venue.venue.id)}
-						<MapMarker lat={venue.venue.location.lat} lon={venue.venue.location.lng} label="{venue.venue.name}"/>
+						<MapMarker lat={venue.venue.location.lat} lon={venue.venue.location.lng} label="{venue.venue.name}"
+						/>
 				{/each}
 					</Map>
 				</section>
@@ -87,7 +83,7 @@ const handleCheck = (id) => {
 
 	main {
 		display: grid;
-		grid-template-columns: repeat(4, 24vw);
+		grid-template-columns: repeat(4, auto);
 		grid-row-gap: 1em;
 		background-color: #C5C6C7;
 		text-align: center;
